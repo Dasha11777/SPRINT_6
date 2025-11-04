@@ -9,11 +9,11 @@ class RedirectPage(BasePage):
         super().__init__(driver)
 
     @allure.step('Клик по Лого Самокат в шапке Сервиса')
-    def click_on_LOGO_SCOOTER(self):
+    def click_on_logo_scooter(self):
         self.click_on_element(Testlocators.LOGO_SCOOTER)
 
     @allure.step('Клик по Лого Яндекс в шапке Сервиса')
-    def click_on_LOGO_YANDEX(self):
+    def click_on_logo_yandex(self):
         self.click_on_element(Testlocators.YA_LOGO)
 
     @allure.step('Проверка перепоха на главную Дзена')
