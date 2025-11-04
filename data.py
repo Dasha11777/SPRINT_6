@@ -17,6 +17,20 @@ class LandingAnswers:
         7: 'Да, обязательно. Всем самокатов! И Москве, и Московской области.'
     }
 
+def get_random_adress():
+    current_street_name = ['Первая', 'Вторая', 'Третья', 'Четвертая', 'Пятая', 'Шестая', 'Седьмая',
+                  'Восьмая', 'Девятая', 'Десятая']
+    street = random.choice(current_street_name)
+    house = random.randint(1, 100)
+    flat = random.randint(1, 100)
+    return f"Москва, {street}, {house}, {flat}"
+
+def get_random_comment():
+    current_words = ['Каждый', 'охотник', 'желает', 'знать', 'где', 'живет', 'фазан']
+    words = random.choice(current_words)
+    numbers = random.randint(100, 1000)
+    return f"Комментарий, {words}, {numbers}"
+
 class Person:
     generator = RussianNames()
     full_name = generator.get_person()
@@ -30,17 +44,5 @@ class Person:
     random_station = f"{random.choice(current_station_list)}"
     colors = ['grey', 'black']
     random_color = f"{random.choice(colors)}"
-
-    def fill_adress_field(self):
-        current_street_name = ['Первая', 'Вторая', 'Третья', 'Четвертая', 'Пятая', 'Шестая', 'Седьмая',
-                      'Восьмая', 'Девятая', 'Десятая']
-        street = random.choice(current_street_name)
-        house = random.randint(1, 100)
-        flat = random.randint(1, 100)
-        self.adress = f"Москва, {street}, {house}, {flat}"
-
-    def fill_comment_field(self):
-        current_words = ['Каждый', 'охотник', 'желает', 'знать', 'где', 'живет', 'фазан']
-        words = random.choice(current_words)
-        numbers = random.randint(100, 1000)
-        self.comment =f"Комментарий, {words}, {numbers}"
+    random_adress = get_random_adress()
+    random_comment = get_random_comment()
